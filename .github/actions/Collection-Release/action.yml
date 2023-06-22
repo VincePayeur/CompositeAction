@@ -2,13 +2,6 @@ name: 'Github automated releases'
 author: 'Vincent Payeur'
 description: 'Used to create automated releases with pushes to the default branch.'
 
-inputs:
-  is_collection:
-    description: 'Is the repo calling the composite action an ansible collection?'
-    type: boolean
-    required: false
-    default: false
-
 runs:
   using: 'composite'
   steps:

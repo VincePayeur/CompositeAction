@@ -1,0 +1,12 @@
+name: 'Github automated releases'
+author: 'Vincent Payeur'
+description: 'Used to create automated releases with pushes to the default branch.'
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Label pull request
+      uses: release-drafter/release-drafter@v5
+      with:
+        disable-releaser: true
+        disable-autolabeler: false
