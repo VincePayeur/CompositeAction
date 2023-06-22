@@ -23,11 +23,13 @@ runs:
       uses: actions/checkout@v3
 
     - name: Update galaxy.yml with the new release version
+      shell: bash
       run: |
         version="${{ steps.release_name.outputs.name }}"
         sed -i 's/[1-9]\?[0-9]\.[1-9]\?[0-9]\.[1-9]\?[0-9]/'"${version:1}"'/' galaxy.yml
 
     - name: Commit and push changes to galaxy.yml
+      shell: bash
       run: |
         git config --global user.name "Github action BOT"
         git config --global user.email "BOT@users.noreply.github.com"
