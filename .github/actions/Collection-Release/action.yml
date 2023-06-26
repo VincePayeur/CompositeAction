@@ -9,6 +9,7 @@ runs:
       uses: actions/checkout@v3
       with:
         repository: VincePayeur/CompositeAction@main  # Replace with the owner and repository name of the configuration repository
+        path: .github
 
     - name: Get new release tag name
       id: release_name
@@ -16,6 +17,7 @@ runs:
       with:
         disable-releaser: false
         disable-autolabeler: true
+        config-path: .github/release-drafter.yml
 
     - name: Checkout repo
       uses: actions/checkout@v3
