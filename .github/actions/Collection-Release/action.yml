@@ -17,8 +17,7 @@ runs:
     - name: LS
       shell: bash
       run: |
-        ls -a
-        ls -a /.github
+        ls -a .github
 
     - name: Get new release tag name
       id: release_name
