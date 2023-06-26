@@ -7,9 +7,16 @@ runs:
   steps:
     - name: Checkout repo
       uses: actions/checkout@v3
+
+    - name: Checkout config repo
+      uses: actions/checkout@v3
       with:
         repository: VincePayeur/CompositeAction  # Replace with the owner and repository name of the configuration repository
         path: .github
+
+    - name: LS
+      run: |
+        ls
 
     - name: Get new release tag name
       id: release_name
@@ -18,9 +25,6 @@ runs:
         disable-releaser: false
         disable-autolabeler: true
         config-path: .github/release-drafter.yml
-
-    - name: Checkout repo
-      uses: actions/checkout@v3
 
     - name: Update galaxy.yml with the new release version
       shell: bash
