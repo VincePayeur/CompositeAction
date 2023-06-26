@@ -1,6 +1,8 @@
 name: 'Github automated releases'
 author: 'Vincent Payeur'
 description: 'Used to create automated releases with pushes to the default branch.'
+env:
+  GITHUB_TOKEN: ${{ secrets.MY_PAT }}
 
 runs:
   using: 'composite'
@@ -10,7 +12,6 @@ runs:
       with:
         repository: VincePayeur/CompositeAction@main  # Replace with the owner and repository name of the configuration repository
         path: .github
-        token: ${{ secrets.MY_PAT }}
 
     - name: Get new release tag name
       id: release_name
