@@ -11,7 +11,7 @@ runs:
     - name: Checkout config repo
       uses: actions/checkout@v3
       with:
-        repository: VincePayeur/CompositeAction  # Replace with the owner and repository name of the configuration repository
+        repository: VincePayeur/CompositeAction
 
     - name: Get new release tag name
       id: release_name
