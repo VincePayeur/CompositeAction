@@ -15,6 +15,7 @@ runs:
         path: .github
 
     - name: LS
+      shell: bash
       run: |
         ls
 
