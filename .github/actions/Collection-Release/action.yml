@@ -1,9 +1,6 @@
 name: 'Github automated releases'
 author: 'Vincent Payeur'
 description: 'Used to create automated releases with pushes to the default branch.'
-inputs:
-  PAT:
-    required: true
 
 runs:
   using: 'composite'
@@ -11,9 +8,8 @@ runs:
     - name: Checkout repo
       uses: actions/checkout@v3
       with:
-        repository: VincePayeur/CompositeAction@main  # Replace with the owner and repository name of the configuration repository
+        repository: VincePayeur/CompositeAction  # Replace with the owner and repository name of the configuration repository
         path: .github
-        token: ${{ inputs.PAT }}
 
     - name: Get new release tag name
       id: release_name
