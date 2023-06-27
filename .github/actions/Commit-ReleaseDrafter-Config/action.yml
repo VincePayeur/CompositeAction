@@ -27,3 +27,6 @@ runs:
         git add .
         git commit --allow-empty -m "Automated commit to add/modify release-drafter.yml"
         git push
+        cd ..
+        rm -rf action
+        rm -rf config
