@@ -19,9 +19,9 @@ runs:
     - name: Commit and push changes to galaxy.yml
       shell: bash
       run: |
-        ls -a
-        ls -a action
-        ls -a config
+        cp config/.github/release-drafter.yml action/.github/
+        cd action/
         git config --global user.name "Github action BOT"
         git config --global user.email "BOT@users.noreply.github.com"
         git commit -am "Automated commit to commit release-drafter.yml"
+        git push
