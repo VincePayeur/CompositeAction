@@ -21,17 +21,21 @@ runs:
     - name: Update galaxy.yml with the new release version
       shell: bash
       run: |
+        echo "::group::Update galaxy.yml with the new release version"
         git pull
         version="${{ steps.release_name.outputs.name }}"
         sed -i 's/[1-9]\?[0-9]\.[1-9]\?[0-9]\.[1-9]\?[0-9]/'"${version:1}"'/' galaxy.yml
+        echo "::endgroup::"
 
     - name: Commit and push changes to galaxy.yml
       shell: bash
       run: |
+        echo "::group::Commit and push changes to galaxy.yml"
         git config --global user.name "Github action BOT"
         git config --global user.email "BOT@users.noreply.github.com"
         git commit -am "Automated commit to update galaxy.yml"
         git push
+        echo "::endgroup::"
 
     - name: Create new release
       uses: release-drafter/release-drafter@v5
