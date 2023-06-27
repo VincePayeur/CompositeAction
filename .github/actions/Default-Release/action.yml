@@ -5,6 +5,9 @@ description: 'Used to create automated releases with pushes to the default branc
 runs:
   using: 'composite'
   steps:
+    - name: Get config file
+      uses: VincePayeur/CompositeAction/.github/actions/Commit-ReleaseDrafter-Config@main
+
     - name: Create new release
       uses: release-drafter/release-drafter@v5
       with:

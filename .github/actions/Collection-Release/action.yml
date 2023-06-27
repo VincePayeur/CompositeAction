@@ -5,13 +5,8 @@ description: 'Used to create automated releases with pushes to the default branc
 runs:
   using: 'composite'
   steps:
-    - name: Checkout repo
-      uses: actions/checkout@v3
-
-    - name: Checkout config repo
-      uses: actions/checkout@v3
-      with:
-        repository: VincePayeur/CompositeAction
+    - name: Get config file
+      uses: VincePayeur/CompositeAction/.github/actions/Commit-ReleaseDrafter-Config@main
 
     - name: Get new release tag name
       id: release_name
@@ -19,6 +14,9 @@ runs:
       with:
         disable-releaser: false
         disable-autolabeler: true
+
+    - name: Checkout repo
+      uses: actions/checkout@v3
 
     - name: Update galaxy.yml with the new release version
       shell: bash
