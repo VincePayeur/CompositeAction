@@ -16,22 +16,14 @@ runs:
         repository: VincePayeur/CompositeAction
         path: ./config
 
-    - name: Get config file
-      shell: bash
-      run: |
-        echo "::group::Get config file"
-        mkdir -p action/.github
-        cp config/.github/release-drafter.yml action/.github/
-        cd action/
-        echo "::endgroup::"
-
     - name: Commit and push config file
       shell: bash
       run: |
-        echo "::group::Commit and push config file"
+        mkdir -p action/.github
+        cp config/.github/release-drafter.yml action/.github/
+        cd action/
         git config --global user.name "Github action BOT"
         git config --global user.email "BOT@users.noreply.github.com"
         git add .
         git commit --allow-empty -m "Automated commit to add/modify release-drafter.yml"
         git push
-        echo "::endgroup::"
