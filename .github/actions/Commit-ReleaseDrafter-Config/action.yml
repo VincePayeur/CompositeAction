@@ -19,7 +19,7 @@ runs:
     - name: Commit and push config file
       shell: bash
       run: |
-        mkdir action/.github
+        mkdir -p action/.github
         cp config/.github/release-drafter.yml action/.github/
         cd action/
         git config --global user.name "Github action BOT"
