@@ -20,7 +20,8 @@ runs:
       shell: bash
       run: |
         ls -a
-        ls -a ../
+        ls -a action
+        ls -a config
         git config --global user.name "Github action BOT"
         git config --global user.email "BOT@users.noreply.github.com"
         git commit -am "Automated commit to commit release-drafter.yml"
