@@ -1,0 +1,23 @@
+name: 'Get Release-Drafter config file'
+author: 'Vincent Payeur'
+description: 'Used to commit config release-drafter config file in the repo.'
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Checkout repo
+      uses: actions/checkout@v3
+
+    - name: Checkout config repo
+      uses: actions/checkout@v3
+      with:
+        repository: VincePayeur/CompositeAction
+        path: ../
+
+    - name: Commit and push changes to galaxy.yml
+      shell: bash
+      run: |
+        ls -a
+        git config --global user.name "Github action BOT"
+        git config --global user.email "BOT@users.noreply.github.com"
+        git commit -am "Automated commit to commit release-drafter.yml"
