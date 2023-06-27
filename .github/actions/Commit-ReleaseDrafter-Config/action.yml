@@ -12,6 +12,7 @@ runs:
       uses: actions/checkout@v3
       with:
         repository: VincePayeur/CompositeAction
+        path: .
 
     - name: Commit and push changes to galaxy.yml
       shell: bash
