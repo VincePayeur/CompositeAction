@@ -1,6 +1,6 @@
 name: 'Github automated releases'
 author: 'Vincent Payeur'
-description: 'Used to create automated releases with pushes to the default branch.'
+description: 'Used to put labels on pull requests.'
 
 runs:
   using: 'composite'
