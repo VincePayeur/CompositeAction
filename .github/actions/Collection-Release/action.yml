@@ -6,7 +6,7 @@ runs:
   using: 'composite'
   steps:
     - name: Get config file
-      uses: VincePayeur/CompositeAction/.github/actions/Commit-ReleaseDrafter-Config@main
+      uses: VincePayeur/CompositeAction/.github/actions/Commit-ReleaseDrafter-Config@v1
 
     - name: Get new release tag name
       id: release_name

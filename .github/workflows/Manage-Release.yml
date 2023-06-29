@@ -18,18 +18,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Label pull request
-        uses: VincePayeur/CompositeAction/.github/actions/Labeler@main
+        uses: VincePayeur/CompositeAction/.github/actions/Labeler@v1
 
   Create_Release:
     if: github.event_name == 'push' && !inputs.is_collection
     runs-on: ubuntu-latest
     steps:
       - name: Create new release
-        uses: VincePayeur/CompositeAction/.github/actions/Default-Release@main
+        uses: VincePayeur/CompositeAction/.github/actions/Default-Release@v1
 
   Create_Release_Collection:
     if: github.event_name == 'push' && inputs.is_collection
     runs-on: ubuntu-latest
     steps:
       - name: Create new release
-        uses: VincePayeur/CompositeAction/.github/actions/Collection-Release@main
+        uses: VincePayeur/CompositeAction/.github/actions/Collection-Release@v1
